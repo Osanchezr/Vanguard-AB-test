@@ -282,6 +282,7 @@ def calculate_error_rate(df):
 
     return result_df
 
+##PRUEBA DE HIPOTESIS
 
 def hypothesis_testing_completion(df, alpha=0.05):
     """
@@ -325,6 +326,119 @@ def hypothesis_testing_completion(df, alpha=0.05):
         'p_value': p_value,
         'decision': hypothesis_decision
     }
+
+
+def hypothesis_test_error_rate(df, alpha=0.05):
+    """
+    Realiza una prueba de hipótesis para comparar las tasas de error entre los grupos Control y Test.
+    
+    Parameters:
+        df (DataFrame): DataFrame que contiene la información sobre errores y el grupo (Control o Test).
+        alpha (float): Nivel de significancia (por defecto es 0.05).
+        
+    Returns:
+        dict: Un diccionario con los resultados de la prueba de hipótesis, incluyendo la decisión
+              de rechazar o no la hipótesis nula.
+    """
+    # Función interna para calcular la tasa de errores
+    def compute_error_stats(group_df):
+        total_records = len(group_df)
+        total_errors = group_df['is_error'].sum()
+        error_rate = total_errors / total_records if total_records > 0 else 0
+        return total_records, total_errors, error_rate
+
+    # Calcular estadísticas para el grupo Control
+    control_df = df[df['Variation'] == 'Control']
+    control_stats = compute_error_stats(control_df)
+    
+    # Calcular estadísticas para el grupo Test
+    test_df = df[df['Variation'] == 'Test']
+    test_stats = compute_error_stats(test_df)
+
+    # Extraer valores de cada grupo
+    n_control, errors_control, p_control = control_stats
+    n_test, errors_test, p_test = test_stats
+
+    # Proporción combinada
+    p_combined = (errors_control + errors_test) / (n_control + n_test)
+
+    # Error estándar conjunto
+    se_combined = np.sqrt(p_combined * (1 - p_combined) * (1/n_control + 1/n_test))
+
+    # Cálculo del estadístico Z
+    z_stat = (p_control - p_test) / se_combined
+
+    # Cálculo del p-valor (prueba bilateral)
+    p_value = 2 * (1 - stats.norm.cdf(abs(z_stat)))
+
+    # Decisión sobre la hipótesis nula
+    reject_null = p_value < alpha
+    decision = "Se rechaza H₀" if reject_null else "No se rechaza H₀"
+
+    # Explicación de la decisión
+    explanation = ("Las diferencias en las tasas de error son estadísticamente significativas" 
+                   if reject_null else 
+                   "No hay evidencia suficiente para decir que las tasas de error son significativamente diferentes")
+
+    # Resultados
+    results = {
+        'Control Error Rate (%)': round(p_control * 100, 2),
+        'Test Error Rate (%)': round(p_test * 100, 2),
+        'Z-Statistic': round(z_stat, 4),
+        'P-Value': round(p_value, 4),
+        'Alpha': alpha,
+        'Decision': decision,
+        'Explanation': explanation
+    }
+    
+    return results
+
+def hypothesis_test_time_stats(df, alpha=0.05):
+    """
+    Realiza una prueba de hipótesis para comparar las medias de duración por paso entre los grupos Control y Test.
+    
+    Parameters:
+        df (DataFrame): DataFrame que contiene la información del tiempo por paso ('time_diff_step')
+                        y el grupo ('Variation').
+        alpha (float): Nivel de significancia (por defecto es 0.05).
+        
+    Returns:
+        DataFrame: Un DataFrame con los resultados de la prueba t para cada paso.
+    """
+    # Lista para almacenar los resultados de cada paso
+    results = []
+    
+    # Obtener todos los pasos únicos del proceso
+    process_steps = df['process_step'].unique()
+    
+    # Iterar sobre cada paso
+    for step in process_steps:
+        # Separar los datos por grupo y paso del proceso
+        control_times = df[(df['Variation'] == 'Control') & (df['process_step'] == step)]['time_diff_step']
+        test_times = df[(df['Variation'] == 'Test') & (df['process_step'] == step)]['time_diff_step']
+        
+        # Prueba t para dos muestras independientes
+        t_stat, p_value = stats.ttest_ind(control_times, test_times, equal_var=False, nan_policy='omit')
+        
+        # Decisión sobre la hipótesis nula
+        reject_null = p_value < alpha
+        decision = "Se rechaza H₀" if reject_null else "No se rechaza H₀"
+        
+        # Agregar los resultados a la lista
+        results.append({
+            'process_step': step,
+            'Control Mean Time': round(control_times.mean(), 2),
+            'Test Mean Time': round(test_times.mean(), 2),
+            'T-Statistic': round(t_stat, 4),
+            'P-Value': round(p_value, 4),
+            'Alpha': alpha,
+            'Decision': decision
+        })
+    
+    # Convertir la lista de resultados a un DataFrame
+    results_df = pd.DataFrame(results)
+    
+    return results_df
 
 def hypothesis_testing_with_threshold(df, cost_effectiveness_threshold=0.05, alpha=0.05):
     """
