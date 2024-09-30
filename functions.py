@@ -4,6 +4,74 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 from statsmodels.stats.proportion import proportions_ztest
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#FUNCIONES EXPLORACIÓN DE DATOS
+
+def plot_histograms(df):
+    """
+    Genera histogramas para cada columna numérica en el DataFrame proporcionado.
+    
+    Parameters:
+        df (DataFrame): DataFrame que contiene las columnas numéricas.
+    """
+    df.hist(figsize=(9, 7), bins=60, xlabelsize=8, ylabelsize=8)
+    plt.suptitle('Histogramas de Variables Numéricas')
+    plt.show()
+
+def plot_boxplots(df):
+    """
+    Genera boxplots para cada columna numérica en el DataFrame proporcionado.
+    
+    Parameters:
+        df (DataFrame): DataFrame que contiene las columnas numéricas.
+    """
+    # Verificar que haya columnas en el DataFrame
+    if df.empty:
+        print("El DataFrame está vacío.")
+        return
+
+    # Configurar el tamaño de la figura
+    num_columns = df.shape[1]
+    num_rows = (num_columns // 3) + (num_columns % 3 > 0)  # Calcular número de filas necesarias
+    plt.figure(figsize=(10, num_rows * 4))  # Ajustar el tamaño en función del número de filas
+
+    # Iterar sobre cada columna y generar un boxplot
+    for i, column in enumerate(df.columns):
+        plt.subplot(num_rows, 3, i + 1)  # Cambia el tamaño de la cuadrícula según el número de columnas
+        plt.boxplot(df[column].dropna())  # Elimina valores NaN antes de graficar
+        plt.title(column)
+        plt.grid(True)
+
+    plt.tight_layout()  # Ajustar el espaciado entre los gráficos
+    plt.suptitle('Boxplots de Variables Numéricas', y=1.02)  # Ajustar el título para que no se superponga
+    plt.show()
+
+def plot_correlation_matrix(df):
+    """
+    Genera un mapa de calor de la matriz de correlación para el DataFrame proporcionado.
+    
+    Parameters:
+    df (DataFrame): DataFrame que contiene las columnas numéricas.
+    """
+    # Calcular la matriz de correlación
+    correlation_matrix = df.corr()
+
+    # Configurar el tamaño de la figura
+    plt.figure(figsize=(8, 6))
+
+    # Crear un mapa de calor (heatmap) de la matriz de correlación
+    sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm', square=True, 
+                cbar_kws={"shrink": .8}, linewidths=0.5)
+
+    # Añadir título y etiquetas
+    plt.title('Mapa de Correlación')
+    plt.xticks(rotation=45)
+    plt.yticks(rotation=0)
+    plt.tight_layout()  # Ajustar el espaciado
+    plt.show()
+
 
 #FUNCIONES DE LIMPIEZA DE DATOS
 
