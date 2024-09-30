@@ -187,7 +187,7 @@ def clean_web_data(df1, df2):
 
     # 4
     final_steps = ['confirm']
-    merged_df['is_complete'] = merged_df.groupby('visit_id')['process_step'].transform(lambda x: 'Complete' if final_steps[0] in x.values else 'Incomplete')
+    merged_df['is_complete'] = merged_df.groupby('client_id')['process_step'].transform(lambda x: 'Complete' if final_steps[0] in x.values else 'Incomplete')
     merged_df['is_complete'] = merged_df['is_complete'].replace({'Complete': 1, 'Incomplete': 0})
 
     # 5
