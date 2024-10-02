@@ -11,6 +11,8 @@ Este proyecto es el análisis de un test A/B para el sitio web de **Vanguard**, 
 
 [Enlace al tablero de Trello](https://trello.com/b/BjGPDHFI)
 
+[Enlace al dashboard de Tableau](https://public.tableau.com/views/vanguard-ab-test-team-14/AnalisisAB?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ## Semana 1: Extracción, Limpieza y Análisis de Datos
 
 ### Objetivo:
