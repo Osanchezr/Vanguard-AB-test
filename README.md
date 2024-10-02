@@ -40,7 +40,7 @@ Durante la primera semana nos enfocamos en la **extracción**, **manipulación**
 Creación de dashboards y visualización de resultados con herramientas de BI.
 
 ### Archivos clave:
-- **`tablou_dasboardvf.twbx`**
+- **`vanguard-ab-test-team-14.twbx`**
 
 ### Procesos realizados:
 - **Visualización en Tableau**
