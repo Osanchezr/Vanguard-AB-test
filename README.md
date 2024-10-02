@@ -4,7 +4,7 @@ Este proyecto es el análisis de un test A/B para el sitio web de **Vanguard**, 
 
 ### Equipo:
 - **Carlos Vergara**
-- **Oscar Paul Sánchez**
+- **Oscar Paul Sanchez**
 
 ### Enlaces:
 [Enlace a la presentación en Canva](https://www.canva.com/design/DAGR9oN8BQU/XbN88uYBWu6SmMsFf0GwKQ/view?utm_content=DAGR9oN8BQU&utm_campaign=designshare&utm_medium=link&utm_source=editor)
@@ -38,17 +38,20 @@ Durante la primera semana nos enfocamos en la **extracción**, **manipulación**
 Creación de dashboards y visualización de resultados con herramientas de BI.
 
 ### Archivos clave:
-- **`tableau_dashboard.twbx`**
+- **`tablou_dasboardvf.twbx`**
 
 ### Procesos realizados:
 - **Visualización en Tableau**
 - **Elaboración reporte final**
 - **Gráficos finales**
+- **Finalización de la presentación**
+- **Retoques finales estéticos**
 
 ### Herramientas Utilizadas:
 - **Tableau**
-- **Power BI**
-
+- **Trello:**
+- **Canva:**
+  
 ---
 
 ### Agradecimientos:
