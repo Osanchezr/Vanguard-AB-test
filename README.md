@@ -104,7 +104,7 @@ Queremos expresar nuestro sincero agradecimiento a **Ironhack** y a todos los pr
 - **Semana 1:** Desarrollo de habilidades en **Exploratory Data Analysis (EDA)**, **limpieza de datos**, y **estadísticas inferenciales**, lo que nos permitió abordar el análisis de manera profunda y eficiente.
   
 - **Semana 2:** Aplicación de herramientas de **Business Intelligence (BI)**, como **Tableau**, para la creación de dashboards interactivos y visualizaciones efectivas que apoyaron nuestras conclusiones.
-- 
+  
 
 Gracias a **Ironhack**, hemos adquirido una visión más clara y estructurada de cómo realizar un análisis de datos completo, desde la limpieza hasta la visualización, y estamos entusiasmados por aplicar estos conocimientos en futuros proyectos. 
 
