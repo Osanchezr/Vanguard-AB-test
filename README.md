@@ -3,15 +3,16 @@
 Este proyecto es el análisis de un test A/B para el sitio web de **Vanguard**, en el que se compararon dos grupos de usuarios: un **grupo de control** con la interfaz tradicional y un **grupo de test** con la nueva interfaz.
 
 ### Equipo:
-- **Carlos Vergara**
-- **Oscar Paul Sanchez**
+> [Carlos Vergara](https://www.linkedin.com/in/carlosvergaragamez/)
+
+> [Oscar Paul Sanchez](https://www.linkedin.com/in/oscar-sanchez-riveros/)
 
 ### Enlaces:
-[Enlace a la presentación en Canva](https://www.canva.com/design/DAGR9oN8BQU/XbN88uYBWu6SmMsFf0GwKQ/view?utm_content=DAGR9oN8BQU&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+- [Enlace a la presentación en Canva](https://www.canva.com/design/DAGR9oN8BQU/XbN88uYBWu6SmMsFf0GwKQ/view?utm_content=DAGR9oN8BQU&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
-[Enlace al tablero de Trello](https://trello.com/b/BjGPDHFI)
+- [Enlace al tablero de Trello](https://trello.com/b/BjGPDHFI)
 
-[Enlace al dashboard de Tableau](https://public.tableau.com/views/vanguard-ab-test-team-14/AnalisisAB?:language=es-ES&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+- [Enlace al dashboard de Tableau](https://public.tableau.com/views/Vanguard-WebsiteRedesign/AnalisisAB?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Semana 1: Extracción, Limpieza y Análisis de Datos
 
