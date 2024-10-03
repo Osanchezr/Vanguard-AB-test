@@ -12,7 +12,6 @@ Este proyecto es el análisis de un test A/B realizado en el sitio web de **Vang
 - [Tablero en Trello](https://trello.com/b/BjGPDHFI)
 - [Dashboard en Tableau](https://public.tableau.com/views/Vanguard-WebsiteRedesign/AnalisisAB?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-
 ---
 
 ## Información del Proyecto
@@ -30,13 +29,10 @@ El objetivo de este proyecto es analizar los resultados de un test A/B en el sit
 2. **Análisis Estadístico:** Refutación de hipótesis basadas en el comportamiento de los usuarios.
 3. **Visualización en Tableau:** Dashboards que ilustran las diferencias de rendimiento entre los grupos.
 
-### Requisitos previos:
-
-- **Python**: Este proyecto se hizo con la versión 3.11.9 de Python. Puedes descargarla desde la [página oficial de Python](https://www.python.org/downloads/).
-
+ ### Requisitos previos:
+>  **Python**: Este proyecto se hizo con la versión 3.11.9 de Python. Puedes descargarla desde la [página oficial de Python](https://www.python.org/downloads/).
 
 ---
-
 
 ## Instrucciones de Instalación
 
@@ -44,16 +40,27 @@ El objetivo de este proyecto es analizar los resultados de un test A/B en el sit
 
 Clona este repositorio en tu máquina local:
 ```bash
-git clone https://github.com/tu_usuario/vanguard-ab-test-team-14.git
+git clone https://github.com/PoeMadara/vanguard-ab-test-team-14.git
 cd vanguard-ab-test-team-14
 ```
 
-### Paso 2: Instalar dependencias
+### Paso 2: Crear y activar un entorno virtual
 
-Al ejecutar el archivo `main.ipynb`, se instalarán automáticamente todas las dependencias necesarias. Sin embargo, también puedes instalar manualmente usando:
-```bash
-pip install -r requirements.txt
-```
+#### Usando Conda
+
+1. **Crear el entorno:** Elige un nombre para tu entorno (por ejemplo, `mi_entorno`):
+   ```bash
+   conda create --name mi_entorno python=3.11.9
+   ```
+
+2. **Activar el entorno:**
+   ```bash
+   conda activate mi_entorno
+   ```
+
+### Paso 3: Instalar dependencias
+
+Al ejecutar el archivo `main.ipynb`, se instalarán automáticamente todas las dependencias necesarias.
 
 ---
 
@@ -104,9 +111,7 @@ Queremos expresar nuestro sincero agradecimiento a **Ironhack** y a todos los pr
 - **Semana 1:** Desarrollo de habilidades en **Exploratory Data Analysis (EDA)**, **limpieza de datos**, y **estadísticas inferenciales**, lo que nos permitió abordar el análisis de manera profunda y eficiente.
   
 - **Semana 2:** Aplicación de herramientas de **Business Intelligence (BI)**, como **Tableau**, para la creación de dashboards interactivos y visualizaciones efectivas que apoyaron nuestras conclusiones.
-  
 
-Gracias a **Ironhack**, hemos adquirido una visión más clara y estructurada de cómo realizar un análisis de datos completo, desde la limpieza hasta la visualización, y estamos entusiasmados por aplicar estos conocimientos en futuros proyectos. 
+Gracias a **Ironhack**, hemos adquirido una visión más clara y estructurada de cómo realizar un análisis de datos completo, desde la limpieza hasta la visualización, y estamos entusiasmados por aplicar estos conocimientos en futuros proyectos.
 
---- 
-
+---
