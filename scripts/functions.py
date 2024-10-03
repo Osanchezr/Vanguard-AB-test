@@ -1,11 +1,9 @@
-
-
-import pandas as pd
-import numpy as np
-from scipy import stats
-from statsmodels.stats.proportion import proportions_ztest
-import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd # Librería para análisis de datos
+import numpy as np # Librería para análisis numérico
+from scipy import stats # Librería para estadísticas
+from statsmodels.stats.proportion import proportions_ztest # Librería para prueba de hipótesis
+import matplotlib.pyplot as plt # Librería para graficos
+import seaborn as sns # Librería para graficos
 
 #FUNCIONES EXPLORACIÓN DE DATOS
 
